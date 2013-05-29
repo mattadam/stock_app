@@ -1,0 +1,25 @@
+<table class="table table-bordered" style="table-layout: fixed; width: 100%">
+  <caption>Return on Equity</caption>
+  <thead>
+  <tr>
+  	<th>Name</th>
+  	<th>Ticker</th>
+    <th>ROE</th>
+    <th>ROE last year</th>
+    <th>ROE before last</th>
+    <th>ROE four years ago</th>
+  <tr>
+  </thead>
+  <tbody>
+  <% @stocks.each do |stock| %>
+  <tr class="<%= stock.roe_growth? ? 'rowGreen' : 'rowRed' %>">
+	  <td><%= stock.name %></td>
+    <td><%= stock.ticker %></td>
+    <td><%= stock.roe %></td>
+    <td><%= stock.roe_last_year %></td>
+    <td><%= stock.roe_before_last %></td>
+    <td><%= stock.roe_fourth_year %></td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>
