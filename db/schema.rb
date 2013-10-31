@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130529020302) do
+ActiveRecord::Schema.define(:version => 20131031033509) do
 
   create_table "stocks", :force => true do |t|
     t.string   "name"
@@ -23,6 +23,11 @@ ActiveRecord::Schema.define(:version => 20130529020302) do
     t.decimal  "roe_last_year"
     t.decimal  "roe_before_last"
     t.decimal  "roe_fourth_year"
+    t.decimal  "eps_growth"
+    t.decimal  "eps_growth1"
+    t.decimal  "eps_growth2"
+    t.decimal  "eps_growth3"
+    t.decimal  "eps_growth4"
   end
 
 end
