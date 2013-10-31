@@ -8,4 +8,16 @@ class Stock < ActiveRecord::Base
   def eps_growth?
     eps_growth1 > eps_growth2 && eps_growth2 > eps_growth3 && eps_growth3 > eps_growth4  ? true : false
   end
+
+  def eps_growth_lq?
+  	eps_growth1 > eps_growth2 ? true : false
+  end
+
+  def eps_growth_2q?
+  	eps_growth2 > eps_growth3 ? true : false
+  end
+
+  def eps_growth_3q?
+  	eps_growth3 > eps_growth4 ? true : false
+  end
 end

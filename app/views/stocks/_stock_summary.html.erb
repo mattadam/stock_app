@@ -1,4 +1,4 @@
-<table class="table table-bordered" style="table-layout: fixed; width: 100%">
+<table class="table table-bordered">
   <caption>Return on Equity</caption>
   <thead>
   <tr>
@@ -16,17 +16,17 @@
   </thead>
   <tbody>
   <% @stocks.each do |stock| %>
-  <tr class="<%= stock.roe_growth? ? 'rowGreen' : 'rowRed' %>">
+  <tr>
 	  <td><%= stock.name %></td>
     <td><%= stock.ticker %></td>
     <td><%= stock.roe %></td>
     <td><%= stock.roe_last_year %></td>
     <td><%= stock.roe_before_last %></td>
     <td><%= stock.roe_fourth_year %></td>
+    <td class="<%= stock.eps_growth_lq? ? 'rowGreen' : 'rowRed' %>"><%= stock.eps_growth1 %></td>
+    <td class="<%= stock.eps_growth_2q? ? 'rowGreen' : 'rowRed' %>"><%= stock.eps_growth2 %></td>
+    <td class="<%= stock.eps_growth_3q? ? 'rowGreen' : 'rowRed' %>"><%= stock.eps_growth3 %></td>
     <td><%= stock.eps_growth4 %></td>
-    <td><%= stock.eps_growth3 %></td>
-    <td><%= stock.eps_growth2 %></td>
-    <td><%= stock.eps_growth1 %></td>
   </tr>
   <% end %>
   </tbody>
